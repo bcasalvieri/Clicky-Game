@@ -4,6 +4,7 @@ import Jumbotron from './components/Jumbotron';
 import Card from './components/Card';
 import characters from './characters.json';
 import CardContainer from './components/CardContainer';
+import Footer from './components/Footer';
 
 const style = {
   wrapper: {
@@ -51,6 +52,7 @@ class App extends React.Component {
               })
             }
           </CardContainer>
+          <Footer />
         </div>
       </React.Fragment>
     );
