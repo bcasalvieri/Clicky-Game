@@ -18,9 +18,9 @@ class Card extends React.Component {
 
   handleClick = () => {
     return (
-      !this.state.clicked
-        ? this.setState({ clicked: true })
-        : false
+      this.state.clicked
+        ? this.props.gameOver
+        : this.props.updateScore
     )
   }
 
@@ -31,7 +31,7 @@ class Card extends React.Component {
         src={this.props.image}
         alt={this.props.name}
         style={style}
-        onClick={this.handleClick}
+        onClick={this.handleClick()}
       />
     )
   }

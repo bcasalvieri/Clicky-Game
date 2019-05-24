@@ -21,7 +21,7 @@ const Jumbotron = () => {
   return (
     <div style={style.container}>
       <h1 style={style.h1}>Clicky Game</h1>
-      <h3>Click on an image to earn points, but don't click the same image twice</h3>
+      <h3>Click on an image to earn points, but don't click the same image twice!</h3>
     </div>
   )
 }

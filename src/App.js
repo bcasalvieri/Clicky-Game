@@ -11,7 +11,7 @@ const style = {
     position: 'relative',
     top: 75
   }
-}
+};
 
 class App extends React.Component {
   state = {
@@ -20,12 +20,20 @@ class App extends React.Component {
     topScore: 0
   };
 
-  handleUpdateScore = () => {
+  updateScore = () => {
+    this.setState({
+      score: this.state.score + 1
+    })
+  };
 
-  }
+  gameOver = () => {
+    // check for new top score
+    if (this.state.score > this.state.topScore) {
+      this.setState({ topScore: this.state.score })
+    }
 
-  handleUpdateTopScore = () => {
-
+    // reset score for new game
+    this.setState({ score: 0 })
   }
 
   render() {
@@ -47,6 +55,8 @@ class App extends React.Component {
                     key={id}
                     name={name}
                     image={image}
+                    updateScore={() => this.updateScore()}
+                    gameOver={() => this.gameOver()}
                   />
                 )
               })
