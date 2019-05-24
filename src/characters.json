@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Tommy Pickles",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/8/8c/Tommy_Pickles_in_Newer_Years.png/revision/latest?cb=20190206172923"
+  },
+  {
+    "id": 2,
+    "name": "Doug Funnie",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/a/a5/Doug_Funnie2.png/revision/latest?cb=20170913011438"
+  },
+  {
+    "id": 3,
+    "name": "Skeeter Valentine",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/d/dd/Skeeter_Valentine.png/revision/latest?cb=20170105210441"
+  },
+  {
+    "id": 4,
+    "name": "Arnold Shortman",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/6/67/Arnold_Shortman-2018.png/revision/latest?cb=20181225170445"
+  },
+  {
+    "id": 5,
+    "name": "Helga Pataki",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/5/51/Helga.png/revision/latest?cb=20190130080223"
+  },
+  {
+    "id": 6,
+    "name": "Gerald Johanssen",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/f/f0/Gerald_Johanssen-2018.png/revision/latest?cb=20181129014901"
+  },
+  {
+    "id": 7,
+    "name": "Angelica Pickles",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/3/30/Angelica_Pickles_2018.png/revision/latest?cb=20181112210355"
+  },
+  {
+    "id": 8,
+    "name": "Chuckie Finster",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/a/ad/Chuckie_Finster.png/revision/latest?cb=20150411032458"
+  },
+  {
+    "id": 9,
+    "name": "Susie Carmichael",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/f/f1/Susie_Carmichael.png/revision/latest?cb=20150411032220"
+  },
+  {
+    "id": 10,
+    "name": "Rocko Rama",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/4/40/Rocko_Rama.png/revision/latest?cb=20150320225351"
+  },
+  {
+    "id": 11,
+    "name": "Ed Bighead",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/1/1e/Ed_Bighead.png/revision/latest?cb=20150409071246"
+  },
+  {
+    "id": 12,
+    "name": "SpongeBob SquarePants",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/0/02/SpongeBob_in_2018.png/revision/latest?cb=20181227043847"
+  },
+  {
+    "id": 13,
+    "name": "Squidward Tentacles",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/e/ea/Squidward_in_2018.png/revision/latest?cb=20190227183729"
+  },
+  {
+    "id": 14,
+    "name": "Patrick Star",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/9/95/Patrick_2018.png/revision/latest?cb=20190202031932"
+  },
+  {
+    "id": 15,
+    "name": "Eugene Krabs",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/a/a7/Mr._Krabs_in_2018.png/revision/latest?cb=20181128232426"
+  },
+  {
+    "id": 16,
+    "name": "Jimmy Neutron",
+    "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/4/42/Jimmy_in_2D.png/revision/latest?cb=20140830084340"
+  }
+]

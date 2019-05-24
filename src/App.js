@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './components/Header'
 import Jumbotron from './components/Jumbotron';
+import Card from './components/Card';
+import characters from './characters.json';
+
 
 class App extends React.Component {
   state = {
+    characterList: characters,
     score: 0,
     topScore: 0
   };
@@ -17,6 +21,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { characterList } = this.state;
     return (
       <React.Fragment>
         <Header
@@ -25,6 +30,17 @@ class App extends React.Component {
           topScore={this.state.topScore}
         />
         <Jumbotron />
+        {
+          characterList.map(({ id, name, image }) => {
+            return (
+              <Card
+                key={id}
+                name={name}
+                image={image}
+              />
+            )
+          })
+        }
       </React.Fragment>
     );
   }

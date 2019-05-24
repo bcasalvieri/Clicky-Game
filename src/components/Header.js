@@ -7,7 +7,7 @@ const style = {
     alignItems: 'center',
     padding: '0 50px',
     backgroundColor: 'lightcoral',
-    boxShadow: '0 8px 15px -6px black',
+    boxShadow: '0 8px 12px -6px black',
     position: 'relative',
     zIndex: 2
   }
