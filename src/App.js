@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Jumbotron from './components/Jumbotron';
 import Card from './components/Card';
 import characters from './characters.json';
+import CardContainer from './components/CardContainer';
 
 
 class App extends React.Component {
@@ -30,17 +31,19 @@ class App extends React.Component {
           topScore={this.state.topScore}
         />
         <Jumbotron />
-        {
-          characterList.map(({ id, name, image }) => {
-            return (
-              <Card
-                key={id}
-                name={name}
-                image={image}
-              />
-            )
-          })
-        }
+        <CardContainer>
+          {
+            characterList.map(({ id, name, image }) => {
+              return (
+                <Card
+                  key={id}
+                  name={name}
+                  image={image}
+                />
+              )
+            })
+          }
+        </CardContainer>
       </React.Fragment>
     );
   }
