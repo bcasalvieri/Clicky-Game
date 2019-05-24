@@ -16,10 +16,6 @@ class Card extends React.Component {
     clicked: false
   };
 
-  updateState = () => {
-    this.setState({ clicked: true });
-  }
-
   render() {
     return (
       <img
@@ -27,7 +23,11 @@ class Card extends React.Component {
         src={this.props.image}
         alt={this.props.name}
         style={style}
-        onClick={this.updateState}
+        onClick={
+          !this.state.clicked
+            ? (this.props.updateScore)
+            : this.props.gameOver
+        }
       />
     )
   }

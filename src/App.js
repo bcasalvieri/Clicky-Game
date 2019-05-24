@@ -25,8 +25,10 @@ class App extends React.Component {
   updateScore = () => {
     this.setState({
       score: this.state.score + 1,
-      msg: 'You guessed correctly!'
+      msg: 'You guessed correctly!',
+      characterList: shuffleArr(characters)
     })
+    // this.shuffleBoard();
   };
 
   gameOver = () => {
@@ -37,7 +39,7 @@ class App extends React.Component {
     }
 
     // reset score for new game
-    this.setState({ score: 0 })
+    this.setState({ score: 0, characterList: shuffleArr(characters) })
   }
 
   render() {
@@ -62,6 +64,7 @@ class App extends React.Component {
                   image={image}
                   updateScore={() => this.updateScore()}
                   gameOver={() => this.gameOver()}
+                  shuffle={() => this.shuffleBoard()}
                 />
               )
             }) 
