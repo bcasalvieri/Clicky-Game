@@ -5,11 +5,13 @@ const style = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0 50px',
+    padding: '0 5%',
     backgroundColor: 'lightcoral',
     boxShadow: '0 8px 12px -6px black',
-    position: 'relative',
-    zIndex: 2
+    position: 'fixed',
+    height: 75,
+    width: '90%',
+    zIndex: 5
   }
 }
 

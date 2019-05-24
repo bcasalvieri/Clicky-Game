@@ -5,6 +5,12 @@ import Card from './components/Card';
 import characters from './characters.json';
 import CardContainer from './components/CardContainer';
 
+const style = {
+  wrapper: {
+    position: 'relative',
+    top: 75
+  }
+}
 
 class App extends React.Component {
   state = {
@@ -30,20 +36,22 @@ class App extends React.Component {
           score={this.state.score}
           topScore={this.state.topScore}
         />
-        <Jumbotron />
-        <CardContainer>
-          {
-            characterList.map(({ id, name, image }) => {
-              return (
-                <Card
-                  key={id}
-                  name={name}
-                  image={image}
-                />
-              )
-            })
-          }
-        </CardContainer>
+        <div style={style.wrapper}>
+          <Jumbotron />
+          <CardContainer>
+            {
+              characterList.map(({ id, name, image }) => {
+                return (
+                  <Card
+                    key={id}
+                    name={name}
+                    image={image}
+                  />
+                )
+              })
+            }
+          </CardContainer>
+        </div>
       </React.Fragment>
     );
   }

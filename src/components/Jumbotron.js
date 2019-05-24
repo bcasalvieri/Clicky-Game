@@ -9,7 +9,7 @@ const style = {
     flexFlow: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 1
+    
   },
   h1: {
     fontSize: '5em',

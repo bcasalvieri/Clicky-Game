@@ -2,12 +2,13 @@ import React from 'react';
 import './Card.css'
 
 const style = {
-  width: '170px',
-  height: '170px',
+  width: 135,
+  height: 135,
+  border: '4px solid #ccc',
   borderRadius: 5,
-  border: '5px solid lightgray',
-  boxShadow: '3px 3px 8px black',
-  margin: '20px'
+  boxShadow: '5px 5px 8px gray',
+  margin: 20,
+  padding: 15
 }
 
 class Card extends React.Component {

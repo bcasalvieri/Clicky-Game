@@ -1,12 +1,12 @@
 import React from 'react';
 
 const style = {
-  width: '50vw',
+  width: '60vw',
   margin: '0 auto',
   paddingTop: '50px',
   display: 'flex',
-  justifyContent: 'center',
-  flexWrap: 'wrap'
+  justifyContent: 'space-around',
+  flexFlow: 'row wrap'
 }
 
 const CardContainer = props => {
