@@ -16,13 +16,9 @@ class Card extends React.Component {
     clicked: false
   };
 
-  handleClick = event => {
-    return(
-      this.state.clicked
-        ? this.props.gameOver
-        : this.props.updateScore
-    )
-  };
+  updateState = () => {
+    this.setState({ clicked: true });
+  }
 
   render() {
     return (
@@ -31,7 +27,7 @@ class Card extends React.Component {
         src={this.props.image}
         alt={this.props.name}
         style={style}
-        onClick={this.handleClick()}
+        onClick={this.updateState}
       />
     )
   }

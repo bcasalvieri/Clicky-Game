@@ -5,6 +5,7 @@ import Card from './components/Card';
 import characters from './characters.json';
 import CardContainer from './components/CardContainer';
 import Footer from './components/Footer';
+import { shuffleArr } from './components/helpers';
 
 const style = {
   wrapper: {
@@ -15,7 +16,7 @@ const style = {
 
 class App extends React.Component {
   state = {
-    characterList: characters,
+    characterList: shuffleArr(characters),
     score: 0,
     topScore: 0,
     msg: "Click on an image!"
@@ -40,7 +41,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { characterList } = this.state;
+    const { characterList } = this.state
+        
     return (
       <React.Fragment>
         <Header
@@ -51,25 +53,26 @@ class App extends React.Component {
         <div style={style.wrapper}>
           <Jumbotron />
           <CardContainer>
-            {
-              characterList.map(({ id, name, image }) => {
-                return (
-                  <Card
-                    key={id}
-                    name={name}
-                    image={image}
-                    updateScore={() => this.updateScore()}
-                    gameOver={() => this.gameOver()}
-                  />
-                )
-              })
-            }
+          {
+            characterList.map(({ id, name, image }) => {
+              return (
+                <Card
+                  key={id}
+                  name={name}
+                  image={image}
+                  updateScore={() => this.updateScore()}
+                  gameOver={() => this.gameOver()}
+                />
+              )
+            }) 
+          }
+        )
           </CardContainer>
           <Footer />
         </div>
       </React.Fragment>
     );
-  }
+  };
 }
 
 export default App;
