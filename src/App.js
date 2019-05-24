@@ -17,16 +17,19 @@ class App extends React.Component {
   state = {
     characterList: characters,
     score: 0,
-    topScore: 0
+    topScore: 0,
+    msg: "Click on an image!"
   };
 
   updateScore = () => {
     this.setState({
-      score: this.state.score + 1
+      score: this.state.score + 1,
+      msg: 'You guessed correctly!'
     })
   };
 
   gameOver = () => {
+    this.setState({ msg: 'You guess incorrectly! '})
     // check for new top score
     if (this.state.score > this.state.topScore) {
       this.setState({ topScore: this.state.score })
@@ -41,7 +44,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header
-          msg="Click on a card to play"
+          msg={this.state.msg}
           score={this.state.score}
           topScore={this.state.topScore}
         />
