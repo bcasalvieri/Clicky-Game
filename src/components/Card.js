@@ -16,13 +16,13 @@ class Card extends React.Component {
     clicked: false
   };
 
-  handleClick = () => {
-    return (
+  handleClick = event => {
+    return(
       this.state.clicked
         ? this.props.gameOver
         : this.props.updateScore
     )
-  }
+  };
 
   render() {
     return (

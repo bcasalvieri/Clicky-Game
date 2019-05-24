@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const style = {
   width: '60vw',
   margin: '0 auto',
