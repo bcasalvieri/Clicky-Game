@@ -11,26 +11,16 @@ const style = {
   padding: 15
 }
 
-class Card extends React.Component {
-  state = {
-    clicked: false
-  };
-
-  render() {
-    return (
-      <img
-        className="Card"
-        src={this.props.image}
-        alt={this.props.name}
-        style={style}
-        onClick={
-          !this.state.clicked
-            ? (this.props.updateScore)
-            : this.props.gameOver
-        }
-      />
-    )
-  }
+const Card = props => {
+  return (
+    <img
+      className="Card"
+      src={props.image}
+      alt={props.name}
+      style={style}
+      onClick={() => props.checkIfClicked(props.id)}
+    />
+  )
 }
 
 export default Card;

@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from './components/Header'
 import Jumbotron from './components/Jumbotron';
-import Card from './components/Card';
-import characters from './characters.json';
 import CardContainer from './components/CardContainer';
+import Card from './components/Card';
 import Footer from './components/Footer';
+import characters from './characters.json';
 import { shuffleArr } from './components/helpers';
 
 const style = {
@@ -16,55 +16,73 @@ const style = {
 
 class App extends React.Component {
   state = {
-    characterList: shuffleArr(characters),
-    score: 0,
+    cards: characters,
+    currScore: 0,
     topScore: 0,
     msg: "Click on an image!"
   };
 
-  updateScore = () => {
-    this.setState({
-      score: this.state.score + 1,
-      msg: 'You guessed correctly!',
-      characterList: shuffleArr(characters)
-    })
-    // this.shuffleBoard();
-  };
+  checkIfClicked = id => {
+    // create copy of clicked card using character id
+    let clickedCard = this.state.cards.filter(card => card.id === id)[0];
+    console.log(clickedCard)
 
-  gameOver = () => {
-    this.setState({ msg: 'You guess incorrectly! '})
-    // check for new top score
-    if (this.state.score > this.state.topScore) {
-      this.setState({ topScore: this.state.score })
+    // create copy of cards and randomize order
+    let cardsCopy = shuffleArr(this.state.cards.slice());
+
+    // if a card hasn't been clicked, set clicked to true and add to cardsCopy
+    if (!clickedCard.clicked) {
+      // set clicked to true and add to cardsCopy arr
+      clickedCard.clicked = true;
+      cardsCopy[cardsCopy.findIndex(card => card.id === id)] = clickedCard;
+
+      // set the state of cards to cardsCopy, add one to currScore, check if currScore is > topScore
+      this.setState({
+        cards: cardsCopy,
+        currScore: this.state.currScore + 1,
+        topScore: this.state.currScore + 1 > this.state.topScore ? this.state.currScore + 1 : this.state.topScore
+      })
+    } 
+    // if a card has been clicked, set click to false and reset game
+    else {
+      let newCardCopy = cardsCopy.map(card => {
+        return {
+          id: card.id,
+          name: card.name,
+          image: card.image,
+          clicked: false
+        }
+      })
+
+      this.setState({
+        cards: newCardCopy,
+        currScore: 0
+      })
     }
-
-    // reset score for new game
-    this.setState({ score: 0, characterList: shuffleArr(characters) })
   }
 
   render() {
-    const { characterList } = this.state
-        
+    const { cards } = this.state
+
     return (
       <React.Fragment>
         <Header
           msg={this.state.msg}
-          score={this.state.score}
+          score={this.state.currScore}
           topScore={this.state.topScore}
         />
         <div style={style.wrapper}>
           <Jumbotron />
           <CardContainer>
           {
-            characterList.map(({ id, name, image }) => {
+            cards.map(({ id, name, image }) => {
               return (
                 <Card
                   key={id}
+                  id={id}
                   name={name}
                   image={image}
-                  updateScore={() => this.updateScore()}
-                  gameOver={() => this.gameOver()}
-                  shuffle={() => this.shuffleBoard()}
+                  checkIfClicked={this.checkIfClicked}
                 />
               )
             }) 

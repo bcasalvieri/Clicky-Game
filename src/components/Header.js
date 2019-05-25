@@ -21,8 +21,8 @@ const Header = props => {
       <h1>Clicky Game</h1>
       <h2>{props.msg}</h2>
       <div style={{display: 'flex'}}>
-        <h2 style={{margin: '10px'}}>Score: {props.score}</h2>
-        <h2 style={{margin: '10px'}}>Top Score: {props.topScore}</h2>
+        <h2 style={{marginRight: 15}}>Score: {props.score}</h2>
+        <h2>Top Score: {props.topScore}</h2>
       </div>
     </div>
   )
