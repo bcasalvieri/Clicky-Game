@@ -13,8 +13,8 @@ const style = {
     flexFlow: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'auto',
-    backgroundColor: '#1B4F72'
+    backgroundColor: '#1B4F72',
+    color: '#f8f8f8'
   },
   i: {
     color: 'teal',
