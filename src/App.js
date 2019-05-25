@@ -6,19 +6,20 @@ import Card from './components/Card';
 import Footer from './components/Footer';
 import characters from './characters.json';
 import { shuffleArr } from './components/helpers';
+import styled from 'styled-components';
 
-const style = {
-  wrapper: {
-    position: 'relative',
-    top: 70
-  }
-};
+
+const Wrapper = styled.div`
+  position: relative;
+  top: 70px;
+`;
 
 class App extends React.Component {
   state = {
     cards: characters,
     currScore: 0,
     topScore: 0,
+    maxScore: 15,
     msg: "Click on an image!"
   };
 
@@ -45,7 +46,7 @@ class App extends React.Component {
       })
     }
     // if a card has been clicked, set click to false and reset game
-    else {
+    else if (clickedCard.clicked || this.state.currScore === this.state.maxScore) {
       let newCardCopy = cardsCopy.map(card => {
         return {
           id: card.id,
@@ -73,7 +74,7 @@ class App extends React.Component {
           score={this.state.currScore}
           topScore={this.state.topScore}
         />
-        <div style={style.wrapper}>
+        <Wrapper>
           <Jumbotron />
           <CardContainer>
             {
@@ -91,7 +92,7 @@ class App extends React.Component {
             }
           </CardContainer>
           <Footer />
-        </div>
+        </Wrapper>
       </React.Fragment>
     );
   };

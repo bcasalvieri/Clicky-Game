@@ -1,23 +1,26 @@
 import React from 'react';
-import './Card.css'
+import styled from 'styled-components';
 
-const style = {
-  width: 135,
-  height: 135,
-  border: '5px solid #dcdcdc',
-  borderRadius: 5,
-  boxShadow: '5px 5px 8px gray',
-  margin: 20,
-  padding: 15
-}
+const Image = styled.img` 
+  width: 135px;
+  height: 135px;
+  border: 5px solid #dcdcdc;
+  borde-radius: 5;
+  box-shadow: 5px 5px 8px gray;
+  margin: 20px;
+  padding: 15px;
+
+  &:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+`;
 
 const Card = props => {
   return (
-    <img
-      className="Card"
+    <Image
       src={props.image}
       alt={props.name}
-      style={style}
       onClick={() => props.checkIfClicked(props.id)}
     />
   )

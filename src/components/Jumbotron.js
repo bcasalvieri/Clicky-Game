@@ -1,29 +1,29 @@
 import React from 'react';
 import Background from './images/memphis-colorful.png';
+import styled from 'styled-components';
 
-const style = {
-  container: {
-    height: '40vh',
-    backgroundImage: `url(${Background})`,
-    color: '#606060',
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottom: '1px solid lightgray'
-  },
-  h1: {
-    fontSize: '5em',
-    margin: 0
-  }
-}
+const Wrapper = styled.div`
+  height: 40vh;
+  background-image: url(${Background});
+  color: #606060;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+`;
+
+const Title = styled.h1`
+  font-size: 5em;
+  margin: 0;
+`;
 
 const Jumbotron = () => {
   return (
-    <div style={style.container}>
-      <h1 style={style.h1}>Clicky Game</h1>
+    <Wrapper>
+      <Title>Clicky Game</Title>
       <h3>Click on an image to earn points, but don't click the same image twice!</h3>
-    </div>
+    </Wrapper>
   )
 }
 

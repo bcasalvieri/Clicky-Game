@@ -17,7 +17,7 @@ const style = {
     color: '#f8f8f8'
   },
   i: {
-    color: 'teal',
+    color: '#58D68D',
     fontSize: '1.5rem',
     marginLeft: 5
   }
