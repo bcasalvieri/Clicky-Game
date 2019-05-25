@@ -1,15 +1,16 @@
 import React from 'react';
+import Background from './images/memphis-colorful.png';
 
 const style = {
   container: {
-    minHeight: '30vh',
-    backgroundColor: 'darkslateblue',
-    color: 'white',
+    height: '40vh',
+    backgroundImage: `url(${Background})`,
+    color: '#606060',
     display: 'flex',
     flexFlow: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    
+    borderBottom: '1px solid lightgray'
   },
   h1: {
     fontSize: '5em',

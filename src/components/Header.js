@@ -6,10 +6,11 @@ const style = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 5%',
-    backgroundColor: 'lightcoral',
+    backgroundColor: '#2874A6',
+    color: '#f8f8f8',
     boxShadow: '0 8px 12px -6px black',
     position: 'fixed',
-    height: 75,
+    height: 70,
     width: '90%',
     zIndex: 5
   }
@@ -20,10 +21,7 @@ const Header = props => {
     <div style={style.header}>
       <h1>Clicky Game</h1>
       <h2>{props.msg}</h2>
-      <div style={{display: 'flex'}}>
-        <h2 style={{marginRight: 15}}>Score: {props.score}</h2>
-        <h2>Top Score: {props.topScore}</h2>
-      </div>
+      <h2>Score: {props.score} | Top Score: {props.topScore}</h2>
     </div>
   )
 }

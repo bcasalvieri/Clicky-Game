@@ -4,7 +4,7 @@ const style = {
   top: {
     width: '100%',
     height: 20,
-    backgroundColor: 'coral'
+    backgroundColor: '#3498DB'
   },
   bottom: {
     width: '100%',
@@ -14,7 +14,7 @@ const style = {
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'auto',
-    backgroundColor: 'lightseagreen'
+    backgroundColor: '#1B4F72'
   },
   i: {
     color: 'teal',

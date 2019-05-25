@@ -10,7 +10,7 @@ import { shuffleArr } from './components/helpers';
 const style = {
   wrapper: {
     position: 'relative',
-    top: 75
+    top: 70
   }
 };
 
@@ -40,9 +40,10 @@ class App extends React.Component {
       this.setState({
         cards: cardsCopy,
         currScore: this.state.currScore + 1,
-        topScore: this.state.currScore + 1 > this.state.topScore ? this.state.currScore + 1 : this.state.topScore
+        topScore: this.state.currScore + 1 > this.state.topScore ? this.state.currScore + 1 : this.state.topScore,
+        msg: "You choose correctly!"
       })
-    } 
+    }
     // if a card has been clicked, set click to false and reset game
     else {
       let newCardCopy = cardsCopy.map(card => {
@@ -56,7 +57,8 @@ class App extends React.Component {
 
       this.setState({
         cards: newCardCopy,
-        currScore: 0
+        currScore: 0,
+        msg: "You chose incorrectly!"
       })
     }
   }
@@ -74,20 +76,19 @@ class App extends React.Component {
         <div style={style.wrapper}>
           <Jumbotron />
           <CardContainer>
-          {
-            cards.map(({ id, name, image }) => {
-              return (
-                <Card
-                  key={id}
-                  id={id}
-                  name={name}
-                  image={image}
-                  checkIfClicked={this.checkIfClicked}
-                />
-              )
-            }) 
-          }
-        )
+            {
+              cards.map(({ id, name, image }) => {
+                return (
+                  <Card
+                    key={id}
+                    id={id}
+                    name={name}
+                    image={image}
+                    checkIfClicked={this.checkIfClicked}
+                  />
+                )
+              })
+            }
           </CardContainer>
           <Footer />
         </div>

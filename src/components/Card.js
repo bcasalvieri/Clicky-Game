@@ -4,7 +4,7 @@ import './Card.css'
 const style = {
   width: 135,
   height: 135,
-  border: '4px solid #ccc',
+  border: '5px solid #dcdcdc',
   borderRadius: 5,
   boxShadow: '5px 5px 8px gray',
   margin: 20,
