@@ -20,7 +20,12 @@ class App extends React.Component {
     currScore: 0,
     topScore: 0,
     maxScore: 15,
-    msg: "Click on an image!"
+    msg: "",
+    msgClass: ""
+  };
+
+  componentDidMount = () => {
+    this.setState({ msg: "Click on an image!" })
   };
 
   checkIfClicked = id => {
@@ -42,11 +47,12 @@ class App extends React.Component {
         cards: cardsCopy,
         currScore: this.state.currScore + 1,
         topScore: this.state.currScore + 1 > this.state.topScore ? this.state.currScore + 1 : this.state.topScore,
-        msg: "You choose correctly!"
+        msg: "You choose correctly!",
+        msgClass: 'correct'
       })
     }
     // if a card has been clicked, set click to false and reset game
-    else if (clickedCard.clicked || this.state.currScore === this.state.maxScore) {
+    else if (clickedCard.clicked) {
       let newCardCopy = cardsCopy.map(card => {
         return {
           id: card.id,
@@ -59,7 +65,8 @@ class App extends React.Component {
       this.setState({
         cards: newCardCopy,
         currScore: 0,
-        msg: "You chose incorrectly!"
+        msg: "You chose incorrectly!",
+        msgClass: "incorrect"
       })
     }
   }
@@ -70,6 +77,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header
+          msgClass={this.state.msgClass}
           msg={this.state.msg}
           score={this.state.currScore}
           topScore={this.state.topScore}

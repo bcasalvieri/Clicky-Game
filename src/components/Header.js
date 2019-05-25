@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,11 +15,27 @@ const Wrapper = styled.div`
   z-index: 5;
 `;
 
+const correctColors = keyframes`
+  from {color: mediumseagreen;}
+  to {color: #f8f8f8}
+`;
+
+const incorrectColors = keyframes`
+  from {color: red;}
+  to {color: #f8f8f8}
+`;
+
+const Message = styled.h2`
+  animation-name: ${props => props.className === 'correct' ? correctColors : incorrectColors};
+  animation-duration: 2s;
+  
+`;
+
 const Header = props => {
   return (
     <Wrapper>
       <h1>Clicky Game</h1>
-      <h2>{props.msg}</h2>
+      <Message className={props.msgClass}>{props.msg}</Message>
       <h2>Score: {props.score} | Top Score: {props.topScore}</h2>
     </Wrapper>
   )
