@@ -4,7 +4,7 @@ import React from 'react';
 const style = {
   width: '60vw',
   margin: '0 auto',
-  padding: '100px 0',
+  padding: '75px 0',
   display: 'flex',
   justifyContent: 'space-around',
   flexFlow: 'row wrap'
