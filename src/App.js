@@ -50,6 +50,10 @@ class App extends React.Component {
         msg: "You choose correctly!",
         msgClass: 'correct'
       })
+
+      setTimeout(() => {
+        this.setState({ msgClass: "" })
+      }, 1000)
     }
     // if a card has been clicked, set click to false and reset game
     else if (clickedCard.clicked) {
@@ -68,6 +72,10 @@ class App extends React.Component {
         msg: "You chose incorrectly!",
         msgClass: "incorrect"
       })
+
+      setTimeout(() => {
+        this.setState({ msgClass: "" })
+      }, 1000)
     }
   }
 

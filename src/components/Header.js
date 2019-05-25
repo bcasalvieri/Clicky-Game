@@ -16,17 +16,17 @@ const Wrapper = styled.div`
 `;
 
 const correctColors = keyframes`
-  from {color: mediumseagreen;}
+  from {color: seagreen;}
   to {color: #f8f8f8}
 `;
 
 const incorrectColors = keyframes`
-  from {color: red;}
+  from {color: tomato;}
   to {color: #f8f8f8}
 `;
 
 const Message = styled.h2`
-  animation-name: ${props => props.className === 'correct' ? correctColors : incorrectColors};
+  animation-name: ${props => props.className === 'correct' ? correctColors : props.className === 'incorrect' ? incorrectColors : false};
   animation-duration: 2s;
   
 `;
