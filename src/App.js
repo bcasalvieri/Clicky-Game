@@ -31,7 +31,6 @@ class App extends React.Component {
   checkIfClicked = id => {
     // create copy of clicked card using character id
     let clickedCard = this.state.cards.filter(card => card.id === id)[0];
-    console.log(clickedCard)
 
     // create copy of cards and randomize order
     let cardsCopy = shuffleArr(this.state.cards.slice());
@@ -77,6 +76,11 @@ class App extends React.Component {
         this.setState({ msgClass: "" })
       }, 1000)
     }
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    console.log('APP DID UPDATE');
+    console.log(prevState.msgClass)
   }
 
   render() {
