@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/clicky-game/static/js/main.07b582c8.chunk.js",
+    "main.js.map": "/clicky-game/static/js/main.07b582c8.chunk.js.map",
+    "runtime~main.js": "/clicky-game/static/js/runtime~main.27874bd3.js",
+    "runtime~main.js.map": "/clicky-game/static/js/runtime~main.27874bd3.js.map",
+    "static/js/2.a917d061.chunk.js": "/clicky-game/static/js/2.a917d061.chunk.js",
+    "static/js/2.a917d061.chunk.js.map": "/clicky-game/static/js/2.a917d061.chunk.js.map",
+    "index.html": "/clicky-game/index.html",
+    "precache-manifest.2c0a79acfb73dbd73efad28cedc3e6d4.js": "/clicky-game/precache-manifest.2c0a79acfb73dbd73efad28cedc3e6d4.js",
+    "service-worker.js": "/clicky-game/service-worker.js",
+    "static/media/memphis-colorful.png": "/clicky-game/static/media/memphis-colorful.8b33b229.png"
+  }
+}
