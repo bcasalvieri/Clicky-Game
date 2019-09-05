@@ -15,15 +15,71 @@ const Wrapper = styled.div`
 
 function AppWithHooks() {
   const [cards, setCards] = useState(characters);
+
   const [currScore, setCurrScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
+
+  useEffect(() => {
+    return setTopScore(currScore > topScore ? currScore : topScore);
+  }, [currScore, topScore]);
+
   const [maxScore] = useState(15);
+
+  useEffect(() => {
+    if (currScore === maxScore) {
+      return (
+        setMessage("Congrats, you won!"),
+        setMsgClass("correct"),
+        setCurrScore(0),
+        setCards(
+          characters.map(char => {
+            return {
+              id: char.id,
+              name: char.name,
+              image: char.image,
+              clicked: false
+            };
+          })
+        ),
+        setTimeout(() => {
+          setMsgClass("");
+        }, 1000)
+      );
+    }
+  }, [currScore, maxScore]);
+
+  const [gameOver, setGameOver] = useState(false);
+
+  useEffect(() => {
+    if (gameOver) {
+      return (
+        setMessage("You chose incorrectly!"),
+        setMsgClass("incorrect"),
+        setCurrScore(0),
+        setCards(
+          characters.map(char => {
+            return {
+              id: char.id,
+              name: char.name,
+              image: char.image,
+              clicked: false
+            };
+          })
+        ),
+        setTimeout(() => {
+          setMsgClass("");
+        }, 1000)
+      );
+    }
+  }, [gameOver]);
+
   const [message, setMessage] = useState("");
-  const [msgClass, setMsgClass] = useState("");
 
   useEffect(() => {
     return setMessage("Click on an image");
   }, []);
+
+  const [msgClass, setMsgClass] = useState("");
 
   const checkIfClicked = id => {
     // create copy of clicked card using character id
@@ -41,7 +97,6 @@ function AppWithHooks() {
       // set the state of cards to cardsCopy, add one to currScore, check if currScore is > topScore
       setCards(cardsCopy);
       setCurrScore(currScore + 1);
-      setTopScore(currScore + 1 > topScore ? currScore + 1 : topScore);
       setMessage("You choose correctly!");
       setMsgClass("correct");
 
@@ -49,26 +104,36 @@ function AppWithHooks() {
         setMsgClass("");
       }, 1000);
     }
-    // if a card has been clicked, set click to false and reset game
+    // if a card has been clicked, set gameOver to true
     else if (clickedCard.clicked) {
-      let newCardCopy = cardsCopy.map(card => {
+      setGameOver(true);
+    }
+  };
+
+  const reset = () => {
+    setCurrScore(0);
+    setCards(
+      characters.map(char => {
         return {
-          id: card.id,
-          name: card.name,
-          image: card.image,
+          id: char.id,
+          name: char.name,
+          image: char.image,
           clicked: false
         };
-      });
+      })
+    );
 
-      setCards(newCardCopy);
-      setCurrScore(0);
+    if (gameOver) {
       setMessage("You chose incorrectly!");
       setMsgClass("incorrect");
-
-      setTimeout(() => {
-        setMsgClass("");
-      }, 1000);
+    } else if (currScore === maxScore) {
+      setMessage("Congrats, you won!");
+      setMsgClass("correct");
     }
+
+    setTimeout(() => {
+      setMsgClass("");
+    }, 1000);
   };
 
   return (
