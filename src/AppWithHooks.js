@@ -27,6 +27,7 @@ function AppWithHooks() {
       ...state,
       clicked: [],
       characters: shuffleArr(state.characters),
+      msg: "Click on an image"
     }));
   }, []);
 
